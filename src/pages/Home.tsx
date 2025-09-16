@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Sparkles, Target, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-youth-empowerment.jpg";
+import heroImage from "@/assets/bg2.jpg";
 
 const Home = () => {
   const scrollToNext = () => {
@@ -22,60 +22,9 @@ const Home = () => {
             alt="Youth Empowerment"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 gradient-hero opacity-80" />
+          <div className="absolute inset-0 gradient-hero opacity-0" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          <div className="animate-fade-up">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Opportunities Chances
-            </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-              Empowering youth to meet the demands of the global job market through specialized training and innovative development opportunities
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12 animate-slide-in-left">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-lift">
-              <Users className="w-12 h-12 mx-auto mb-4 text-white" />
-              <h3 className="text-2xl font-bold mb-2">1000+</h3>
-              <p className="text-white/80">Empowered Youth</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-lift">
-              <Target className="w-12 h-12 mx-auto mb-4 text-white" />
-              <h3 className="text-2xl font-bold mb-2">50+</h3>
-              <p className="text-white/80">Training Programs</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-lift">
-              <Sparkles className="w-12 h-12 mx-auto mb-4 text-white" />
-              <h3 className="text-2xl font-bold mb-2">25+</h3>
-              <p className="text-white/80">Strategic Partnerships</p>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right">
-            <Link to="/contact">
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 rounded-full shadow-elegant transition-smooth hover:shadow-hover"
-              >
-                Join Us Now
-              </Button>
-            </Link>
-            <Link to="/about">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 rounded-full transition-smooth"
-              >
-                Learn More
-              </Button>
-            </Link>
-          </div>
-        </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
