@@ -3,19 +3,18 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FaTiktok } from "react-icons/fa";
+
 import { 
-  MapPin, 
   Phone, 
   Mail, 
-  Clock, 
   Send, 
   MessageSquare, 
   Users, 
   Target,
   Linkedin,
-  Twitter,
   Instagram,
-  Youtube
+  Facebook
 } from "lucide-react";
 
 const Contact = () => {
@@ -37,21 +36,14 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Here you would typically send the data to your backend
+    // هنا المفروض تبعت الداتا للباك إند
   };
 
   const contactMethods = [
     {
-      icon: MapPin,
-      title: "Our Location",
-      info: "Riyadh, Kingdom of Saudi Arabia",
-      infoEn: "Ministry of Youth and Sports Complex",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
       icon: Phone,
       title: "Call Us",
-      info: "+966 11 123 4567",
+      info: "+20 115 523 0257",
       infoEn: "24/7 Support Available",
       color: "from-green-500 to-green-600"
     },
@@ -62,20 +54,13 @@ const Contact = () => {
       infoEn: "We reply within 24 hours",
       color: "from-purple-500 to-purple-600"
     },
-    {
-      icon: Clock,
-      title: "Working Hours",
-      info: "Sunday - Thursday: 8:00 AM - 5:00 PM",
-      infoEn: "Friday & Saturday: Closed",
-      color: "from-orange-500 to-orange-600"
-    }
   ];
 
   const socialLinks = [
-    { icon: Linkedin, name: "LinkedIn", url: "#", color: "hover:text-blue-600" },
-    { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-blue-400" },
+    { icon: Linkedin, name: "LinkedIn", url: "https://www.linkedin.com/company/theopportunities-makers",  color: "hover:text-blue-600" },
+    { icon: Facebook, name: "Facebook", url: "https://www.facebook.com/TheOpportunitiesMakers", color: "hover:text-blue-400" },
     { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-500" },
-    { icon: Youtube, name: "YouTube", url: "#", color: "hover:text-red-600" }
+    { icon: FaTiktok, name: "Tiktok", url: "https://www.tiktok.com/@the.opportunities.makers", color: "hover:text-red-600" }
   ];
 
   const quickActions = [
@@ -102,13 +87,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background pt-20">
       <section className="py-20 bg-gradient-card relative overflow-hidden">
-        {/* Background Pattern */}
+        {/* خلفية بسيطة */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 gradient-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 gradient-primary rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
+          {/* العنوان */}
           <div className="text-center mb-16 animate-fade-up">
             <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
               Contact Us
@@ -146,92 +132,102 @@ const Contact = () => {
           {/* Main Contact Section */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             {/* Contact Form */}
-            <Card className="p-8 shadow-elegant border-0 bg-white">
-              <h3 className="text-2xl font-bold text-primary mb-6">Send Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-2">
-                      Full Name *
-                    </label>
-                    <Input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter your full name"
-                      required
-                      className="border-gray-200 focus:border-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="example@email.com"
-                      required
-                      className="border-gray-200 focus:border-primary"
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-2">
-                      Phone Number
-                    </label>
-                    <Input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+966 5X XXX XXXX"
-                      className="border-gray-200 focus:border-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-2">
-                      Subject *
-                    </label>
-                    <Input
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="Message subject"
-                      required
-                      className="border-gray-200 focus:border-primary"
-                    />
-                  </div>
-                </div>
+{/* Contact Form */}
+<Card className="p-6 shadow-lg border border-purple-800 bg-white rounded-2xl">
+  <h3 className="text-3xl font-extrabold text-primary mb-8 border-b border-gray-200 pb-4">
+    Send Message
+  </h3>
+  <form onSubmit={handleSubmit} className="space-y-8 text-lg">
+    
+    {/* Name & Email */}
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="space-y-3">
+        <label className="block text-base font-semibold text-primary">
+          Full Name *
+        </label>
+        <Input
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          placeholder="Enter your full name"
+          required
+          className="h-12 text-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-lg"
+        />
+      </div>
+      <div className="space-y-3">
+        <label className="block text-base font-semibold text-primary">
+          Email Address *
+        </label>
+        <Input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          placeholder="example@email.com"
+          required
+          className="h-12 text-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-lg"
+        />
+      </div>
+    </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-2">
-                    Message *
-                  </label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Write your message here..."
-                    rows={5}
-                    required
-                    className="border-gray-200 focus:border-primary resize-none"
-                  />
-                </div>
+    {/* Phone & Subject */}
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="space-y-3">
+        <label className="block text-base font-semibold text-primary">
+          Phone Number
+        </label>
+        <Input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+          placeholder="+20 1XX XXX XXX"
+          className="h-12 text-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-lg"
+        />
+      </div>
+      <div className="space-y-3">
+        <label className="block text-base font-semibold text-primary">
+          Subject *
+        </label>
+        <Input
+          name="subject"
+          value={formData.subject}
+          onChange={handleInputChange}
+          placeholder="Message subject"
+          required
+          className="h-12 text-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-lg"
+        />
+      </div>
+    </div>
 
-                <Button
-                  type="submit"
-                  className="w-full gradient-primary text-white hover:shadow-glow transition-all group"
-                >
-                  <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Send Message
-                </Button>
-              </form>
-            </Card>
+    {/* Message */}
+    <div className="space-y-3">
+      <label className="block text-base font-semibold text-primary">
+        Message *
+      </label>
+      <Textarea
+        name="message"
+        value={formData.message}
+        onChange={handleInputChange}
+        placeholder="Write your message here..."
+        rows={6}
+        required
+        className="text-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 rounded-lg resize-none"
+      />
+    </div>
+
+    {/* Submit Button */}
+    <Button
+      type="submit"
+      className="w-full h-14 text-lg gradient-primary text-white font-semibold hover:shadow-xl transition-all group rounded-lg"
+    >
+      <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+      Send Message
+    </Button>
+  </form>
+</Card>
+
+
 
             {/* Quick Actions & Social */}
             <div className="space-y-6">
@@ -275,6 +271,8 @@ const Contact = () => {
                     <a
                       key={index}
                       href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`flex items-center space-x-3 p-3 border border-gray-100 rounded-lg hover:border-primary/20 transition-colors group ${social.color}`}
                     >
                       <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -304,18 +302,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Map Placeholder */}
-          <Card className="overflow-hidden shadow-elegant border-0 bg-white">
-            <div className="h-64 bg-gradient-to-r from-primary/10 to-primary/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-primary mb-2">Find Us on Map</h3>
-                <p className="text-muted-foreground">
-                  Riyadh, Kingdom of Saudi Arabia
-                </p>
-              </div>
-            </div>
-          </Card>
         </div>
       </section>
     </div>

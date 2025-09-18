@@ -21,13 +21,14 @@ const Navigation = () => {
 
 return (
   <nav className="fixed top-0 w-full z-50 mt-5 transition-all duration-300">
-    <div
-      className={`container mx-auto px-4 py-4 rounded-full transition-all duration-300 border border-[#680F67] shadow-lg ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-sm"
-          : "bg-transparent"
-      }`}
-    >
+<div
+  className={`container mx-auto px-4 py-4 rounded-full transition-all duration-300 border border-[#680F67] shadow-lg ${
+    isScrolled
+      ? "bg-background/95 backdrop-blur-sm"   
+      : "bg-background/40 backdrop-blur-lg"   
+  }`}
+>
+
       <div className="flex items-center justify-between">
         {/* Logo */}
 {/* Logo */}
@@ -38,7 +39,7 @@ return (
     className="w-10 h-10 object-cover rounded-full"
   />
   <div className="text-xl font-bold text-primary">
-    Opportunities Chances
+    Opportunities Makers
   </div>
 </Link>
 
